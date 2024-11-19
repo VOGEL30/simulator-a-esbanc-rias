@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador Financeiro</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulador Financeiro</h1>
+    <form id="investment-form">
+      <label for="calc-type">Tipo de Simulação:</label>
+      <select id="calc-type">
+        <option value="consorcio">Consórcio</option>
+        <option value="acoes">Ações Bancárias</option>
+        <option value="emprestimo">Empréstimo</option>
+        <option value="financiamento">Financiamento</option>
+      </select>
+
+      <!-- Campos do Consórcio -->
+      <div id="consorcio-fields" class="calc-fields">
+        <label for="total-value">Valor total:</label>
+        <input type="number" id="total-value" placeholder="Valor total">
+        <label for="months-consorcio">Número de parcelas:</label>
+        <input type="number" id="months-consorcio" placeholder="Parcelas">
+        <label for="admin-fee">Taxa administrativa (%):</label>
+        <input type="number" id="admin-fee" placeholder="Taxa administrativa">
+      </div>
+
+      <!-- Campos das Ações Bancárias -->
+      <div id="acoes-fields" class="calc-fields hidden">
+        <label for="bank-stock">Banco:</label>
+        <select id="bank-stock">
+          <option value="itau">Itaú</option>
+          <option value="bradesco">Bradesco</option>
+          <option value="santander">Santander</option>
+        </select>
+        <label for="investment">Investimento Inicial:</label>
+        <input type="number" id="investment" placeholder="Valor do Investimento">
+        <label for="months-acoes">Número de meses:</label>
+        <input type="number" id="months-acoes" placeholder="Meses">
+      </div>
+
+      <!-- Campos do Empréstimo -->
+      <div id="emprestimo-fields" class="calc-fields hidden">
+        <label for="loan-amount">Valor do Empréstimo:</label>
+        <input type="number" id="loan-amount" placeholder="Valor do empréstimo">
+        <label for="interest-rate">Taxa de Juros (%):</label>
+        <input type="number" id="interest-rate" placeholder="Taxa de juros">
+        <label for="loan-term">Número de Parcelas:</label>
+        <input type="number" id="loan-term" placeholder="Parcelas">
+      </div>
+
+      <!-- Campos do Financiamento -->
+      <div id="financiamento-fields" class="calc-fields hidden">
+        <label for="property-value">Valor do Imóvel:</label>
+        <input type="number" id="property-value" placeholder="Valor do imóvel">
+        <label for="down-payment">Entrada:</label>
+        <input type="number" id="down-payment" placeholder="Valor da entrada">
+        <label for="financing-rate">Taxa de Juros (%):</label>
+        <input type="number" id="financing-rate" placeholder="Taxa de juros">
+        <label for="financing-term">Número de Parcelas:</label>
+        <input type="number" id="financing-term" placeholder="Parcelas">
+      </div>
+
+      <button type="button" id="simulate">Simular</button>
+      <button type="button" id="clear">Limpar</button>
+    </form>
+
+    <div id="result"></div>
+    <canvas id="chart"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
